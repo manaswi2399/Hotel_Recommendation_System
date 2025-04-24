@@ -16,11 +16,11 @@ if "location" in df.columns:
     df.rename(columns={"location": "location_rating"}, inplace=True)
 
 # Handle sub-ratings and fill missing values hotel-wise
-sub_rating_cols = ["cleanliness", "service", "rooms", "sleep quality", "value", "location_rating"]
+"""sub_rating_cols = ["cleanliness", "service", "rooms", "sleep quality", "value", "location_rating"]
 for col in sub_rating_cols:
     if col in df.columns:
         df[col] = pd.to_numeric(df[col], errors="coerce")
-        df[col] = df[col].fillna(df.groupby("hotel_url")[col].transform("mean"))
+        df[col] = df[col].fillna(df.groupby("hotel_url")[col].transform("mean"))"""
 
 # Clean and convert 'date' by stripping timestamp and parsing
 df["date"] = df["date"].astype(str).str[:10]
@@ -39,8 +39,5 @@ df["season"] = df["month"].map({
 # Extract hotel_id from hotel_url
 df["hotel_id"] = df["hotel_url"].str.extract(r"Reviews-(.*?)-")[0]
 
-# Final summary: check missing values and print head
-#print("Missing Values")
-#print(df.isna().sum())
 
-df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/HotelDataset_CleanedFinal.csv", index=False)
+df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/HotelDataset_CleanedBeforeSplit.csv", index=False)
