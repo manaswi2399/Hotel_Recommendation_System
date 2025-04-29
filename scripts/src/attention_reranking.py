@@ -40,9 +40,17 @@ def train(model, feats, y, epochs=10, lr=1e-3):
 def main(cfg):
     df = pd.read_csv(cfg.candidates_csv)
 
-    feat_cols = ["combined","rating","cleanliness","service","rooms",
-                 "value","location_rating","sentiment_score",
-                 "topic_id","review_length"]
+    feat_cols = ["combined",                       
+                "rating", "cleanliness", "service", "rooms",
+                "value", "location_rating",
+                "sentiment_score",
+                "has_room_quality","has_location","has_staff_service",
+                "has_cleanliness","has_amenities","has_value_for_money",
+                "has_food_and_restaurant","has_noise_level","has_comfort",
+                "is_cleanliness_missing","is_service_missing",
+                "is_rooms_missing","is_sleep_quality_missing",
+                "is_value_missing","is_location_rating_missing"]
+
     feats = build_features(df, feat_cols)
     ratings = torch.tensor(df["rating"].values, dtype=torch.float)
 

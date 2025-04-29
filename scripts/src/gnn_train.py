@@ -95,7 +95,15 @@ def main(cfg):
 
     # Build graph
     feat_cols = ["rating", "cleanliness", "service",
-                 "rooms", "value", "location_rating"]
+                "rooms", "value", "location_rating",
+                "sentiment_score",
+                "has_room_quality", "has_location", "has_staff_service",
+                "has_cleanliness", "has_amenities", "has_value_for_money",
+                "has_food_and_restaurant", "has_noise_level", "has_comfort",
+                "is_cleanliness_missing", "is_service_missing",
+                "is_rooms_missing", "is_sleep_quality_missing",
+                "is_value_missing", "is_location_rating_missing"]
+
     data = build_graph(df, user_enc, hotel_enc, feat_cols)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
