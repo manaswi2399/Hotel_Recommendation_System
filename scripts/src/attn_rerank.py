@@ -20,14 +20,12 @@ class AttnReranker(nn.Module):
         w = torch.softmax(self.attn(x), dim=1)
         return (w * x).sum(dim=1)         # (N,)
 
-# -------------- utilities -------------- #
 def zscore(df: pd.DataFrame) -> pd.DataFrame:
     return (df - df.mean()) / (df.std() + 1e-6)
 
 def build_feat_tensor(df: pd.DataFrame, cols, device):
     return torch.tensor(zscore(df[cols]).values, dtype=torch.float, device=device)
 
-# --------------- main ------------------ #
 def main(cfg):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     df     = pd.read_csv(cfg.candidates_csv)
