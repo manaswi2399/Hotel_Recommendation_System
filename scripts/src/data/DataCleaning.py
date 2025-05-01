@@ -7,7 +7,7 @@ def main():
     print("Dask client started")
 
     # Load data
-    df = dd.read_csv('/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/HotelDataset.csv', parse_dates=['date'], low_memory=False)
+    df = dd.read_csv('/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/raw/HotelDataset.csv', parse_dates=['date'], low_memory=False)
 
     # Drop unwanted columns
     cols_to_drop = [
@@ -19,13 +19,11 @@ def main():
         'check in / front desk',
     ]
     df = df.drop(columns=cols_to_drop)
-
-  
-    output_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/Hotel_Dataset_Dropped_Col.csv"
+    output_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/raw/Hotel_Dataset_Dropped_Col.csv"
     df.to_csv(output_path, single_file=True, index=False)
 
 
-    os.remove("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/HotelDataset.csv")
+    os.remove("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/raw/HotelDataset.csv")
     print("Old file removed and new file saved.")
 
 if __name__ == "__main__":

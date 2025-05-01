@@ -17,9 +17,9 @@ def proportional_sample(df, year_col, target_total, seed=42):
 
 
 # Paths
-train_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Train_with_topics.csv"
-val_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Validation_with_topics.csv"
-test_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Test_with_topics.csv"
+train_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Train_with_topics.csv"
+val_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Validation_with_topics.csv"
+test_path = "/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Test_with_topics.csv"
 
 
 train_df = pd.read_csv(train_path)
@@ -31,8 +31,8 @@ train_small = proportional_sample(train_df, "year", target_total=5_000_000)
 val_small = proportional_sample(val_df, "year", target_total=1_000_000)
 test_small = proportional_sample(test_df, "year", target_total=1_000_000)
 
-train_small.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Train_small.csv", index=False)
-val_small.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Validation_small.csv", index=False)
-test_small.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Test_small.csv", index=False)
+train_small.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Train_small.csv", index=False)
+val_small.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Validation_small.csv", index=False)
+test_small.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Test_small.csv", index=False)
 
 print("\n Sampling done and CSVs saved!")

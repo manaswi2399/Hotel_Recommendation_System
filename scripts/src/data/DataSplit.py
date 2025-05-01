@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the cleaned dataset
-df = pd.read_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/HotelDataset_CleanedBeforeSplit.csv")
+df = pd.read_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/raw/HotelDataset_CleanedBeforeSplit.csv")
 
 # Drop year 2019 (incomplete data)
 df = df[df["year"] < 2019]
@@ -29,8 +29,8 @@ val_df   = fill_with_train_means(val_df)
 test_df  = fill_with_train_means(test_df)
 
 
-train_df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Train.csv", index=False)
-val_df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Validation.csv", index=False)
-test_df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Test.csv", index=False)
+train_df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Train.csv", index=False)
+val_df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Validation.csv", index=False)
+test_df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Test.csv", index=False)
 
 print("Data split saved successfully!")

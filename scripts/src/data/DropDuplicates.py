@@ -3,8 +3,8 @@ import hashlib
 import os
 
 
-input_file = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/Hotel_Dataset_Dropped_Col.csv'
-temp_file = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/Hotel_Dataset_Without_duplicates.csv'
+input_file = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/raw/Hotel_Dataset_Dropped_Col.csv'
+temp_file = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/raw/Hotel_Dataset_Without_duplicates.csv'
 
 # Store row hashes
 seen = set()

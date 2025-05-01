@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset
-df = pd.read_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/Hotel_Dataset_Without_duplicates.csv")
+df = pd.read_csv("/home/018171153/Hotel_Recommendation_System/scripts/src/data/raw/Hotel_Dataset_Without_duplicates.csv")
 
 # Drop rows with missing critical fields
 df.dropna(subset=["author", "rating", "text", "hotel_url"], inplace=True)
@@ -40,4 +40,4 @@ df["season"] = df["month"].map({
 df["hotel_id"] = df["hotel_url"].str.extract(r"Reviews-(.*?)-")[0]
 
 
-df.to_csv("/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/raw/HotelDataset_CleanedBeforeSplit.csv", index=False)
+df.to_csv("/home/018171153/Hotel_Recommendation_System/scripts/src/data/raw/HotelDataset_CleanedBeforeSplit.csv", index=False)

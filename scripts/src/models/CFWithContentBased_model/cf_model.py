@@ -17,8 +17,8 @@ import joblib
 import os
 
 
-train_path = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Train_with_topics_sentiment.csv'
-val_path = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Validation_with_topics_sentiment.csv'
+train_path = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Train_with_topics_sentiment.csv'
+val_path = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Validation_with_topics_sentiment.csv'
 model_dir = 'trained_model_CF'
 os.makedirs(model_dir, exist_ok=True)
 
@@ -170,7 +170,7 @@ print(f"New (cold-start) users: {len(new_users)}")
 
 
 
-test_path = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/data/processed/Test_with_topics_sentiment.csv'
+test_path = '/home/018171153/Hotel_Recommendation_System/Hotel_Recommendation_System/scripts/src/data/processed/Test_with_topics_sentiment.csv'
 model_dir = 'trained_model_CF'
 output_path = os.path.join(model_dir, 'test_top5_predictions.csv')
 top_k = 5
